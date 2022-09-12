@@ -1,0 +1,47 @@
+.body {
+    background-color: #1b1b1b;
+}
+
+.img-about {
+    width: 90;
+    height: 90;
+    transform: linear 0.6;
+}
+
+.img-about-2 {
+    width: 90;
+    height: 90;
+}
+
+.img-about:hover {
+    transform: scale(1.2);
+}
+
+p span {
+    display: block;
+}
+
+.nav-color {
+    background-color: #222222;
+}
+
+.main-size {
+    height: 85vh;
+}
+
+.custom-nav:hover {
+    color: #651caa !important;
+    cursor: pointer;
+}
+
+.custom-nav.active {
+    color: #651caa !important;
+}
+
+.pee {
+    padding-top: 10px;
+}
+
+.errorMessage {
+    color: red;
+}
