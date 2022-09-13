@@ -45,3 +45,7 @@ p span {
 .errorMessage {
     color: red;
 }
+
+.successMessage {
+    color: green;
+}

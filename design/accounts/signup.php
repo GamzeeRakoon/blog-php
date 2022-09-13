@@ -67,7 +67,15 @@
         
         } else if ($_GET["error"] == "invalidemail") {
             echo "<p class='errorMessage text-center'>Please use a valid email.</p>";
+
+        } else if ($_GET["error"] == "nomatch") {
+            echo "<p class='errorMessage text-center'>Passwords did not match, please try again.</p>";
         
+        } else if ($_GET["error"] == "usernametaken") {
+            echo "<p class='errorMessage text-center'>This username is already taken please choose diffrent one.</p>";
+        
+        } else if ($_GET["error"] == "none") {
+            echo "<p class='successMessage text-center'>You have successfully signed up!</p>";
         }
     }
     ?>
