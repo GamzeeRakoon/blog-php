@@ -35,11 +35,11 @@
                         
 
                         if ($signup === true && isset($_SESSION["useruid"])) {
-                            echo "<a href='login.php' class='nav-link text-white custom-nav '>bruh</a>";
+                            echo "<a href='user.php' class='nav-link text-white custom-nav '>Account</a>";
                         } else if ($signup === true) {
-                            echo "<a href='user.php' class='nav-link text-white custom-nav '>Login/Register</a>";
+                            echo "<a href='login.php' class='nav-link text-white custom-nav '>Login/Register</a>";
                         } else if (isset($_SESSION["useruid"])) {
-                            echo "<a href='./accounts/user.php' class='nav-link text-white custom-nav '>bruh</a>";
+                            echo "<a href='./accounts/user.php' class='nav-link text-white custom-nav '>Account</a>";
                         } else {
                             echo "<a href='./accounts/login.php' class='nav-link text-white custom-nav '>Login/Register</a>";
                         }

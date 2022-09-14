@@ -12,33 +12,33 @@ if (isset($_POST["submit"])) {
     require_once 'functions.inc.php';
 
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
-        header("location: ../design/accounts/signup.php?error=emptyinput");
+        header("location: ../accounts/signup.php?error=emptyinput");
         exit();
     }
 
     if (invalidUid($username) !== false) {
-        header("location: ../design/accounts/signup.php?error=invaliduid");
+        header("location: ../accounts/signup.php?error=invaliduid");
         exit();
     }
 
     if (invalidEmail($email) !== false) {
-        header("location: ../design/accounts/signup.php?error=invalidemail");
+        header("location: ../accounts/signup.php?error=invalidemail");
         exit();
     }
 
     if (pwdMatch($pwd, $pwdRepeat) !== false) {
-        header("location: ../design/accounts/signup.php?error=nomatch");
+        header("location: ../accounts/signup.php?error=nomatch");
         exit();
     }
 
     if (uidExists($conn, $username, $email) !== false) {
-        header("location: ../design/accounts/signup.php?error=usernametaken");
+        header("location: ../accounts/signup.php?error=usernametaken");
         exit();
     }
 
     createUser($conn, $name, $email, $username, $pwd); 
 
 } else {
-    header("location: ../design/accounts/signup.php");
+    header("location: ../accounts/signup.php");
     exit();
 }

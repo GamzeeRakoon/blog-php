@@ -7,7 +7,7 @@
     
     <section>
         <div class="signup">
-            <form action="./include/signup.inc.php" method="post" class="container text-center text-white">
+            <form action="../include/signup.inc.php" method="post" class="container text-center text-white">
                 <h1>sign up</h1>
                 <div class="col align-self-center pee">
                     <input class="" type="text" name="name" placeholder="Full Name" />
