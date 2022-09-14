@@ -1,4 +1,5 @@
 <?php
+$signup = false;
 require "./templates/header.php";
 ?>
 

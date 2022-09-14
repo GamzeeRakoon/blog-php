@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,14 +18,32 @@
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link text-white custom-nav active">Home</a>
+                        <?php 
+                            if ($index === true) {
+                                echo "<a href='../index.php' class='nav-link text-white custom-nav active'>Home</a>";
+                            } else {
+                                echo "<a href='index.php' class='nav-link text-white custom-nav active'>Home</a>";
+                            }
+                        ?>
                     </li>
                     <li class="nav-item">
                         <a href="https://www.nikirakoon.nl/index.html" class="nav-link text-white custom-nav">Portfolio</a>
                     </li>
                 </ul>
                 <div class="text-end">
-                    <a href="http://localhost/blog/design/accounts/login.php" class="nav-link text-white custom-nav ">Login/Register</a>
+                    <?php 
+                        
+
+                        if ($signup === true && isset($_SESSION["useruid"])) {
+                            echo "<a href='login.php' class='nav-link text-white custom-nav '>bruh</a>";
+                        } else if ($signup === true) {
+                            echo "<a href='user.php' class='nav-link text-white custom-nav '>Login/Register</a>";
+                        } else if (isset($_SESSION["useruid"])) {
+                            echo "<a href='./accounts/user.php' class='nav-link text-white custom-nav '>bruh</a>";
+                        } else {
+                            echo "<a href='./accounts/login.php' class='nav-link text-white custom-nav '>Login/Register</a>";
+                        }
+                    ?>
                 </div>
             </div>
 
