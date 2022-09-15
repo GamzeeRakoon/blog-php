@@ -99,7 +99,7 @@ function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username);
 
     if ($uidExists === false) {
-        header("location: ../design/accounts/login.php?error=wronglogin");
+        header("location: ../accounts/login.php?error=wronglogin");
         exit();
     }
 
@@ -107,7 +107,7 @@ function loginUser($conn, $username, $pwd) {
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../design/accounts/login.php?error=nomatch");
+        header("location: ../accounts/login.php?error=nomatch");
         exit();
     } else if ($checkPwd === true) {
         session_start();
