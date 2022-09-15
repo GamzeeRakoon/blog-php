@@ -38,10 +38,12 @@
                                 } else if ($_GET["error"] == "wronglogin") {
                                     echo "<p class='errorMessage text-center pee'>*Incorrect login information.</p>";
     
+                                } else if ($_GET["error"] == "none") {
+                                    echo "<p class='successMessage pee text-center'>*You have successfully signed up!</p>";
                                 }
                             }
                         ?>
-                        
+
                     </div>
                 </div>
             </div>

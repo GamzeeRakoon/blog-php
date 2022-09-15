@@ -52,14 +52,12 @@
                                     echo "<p class='errorMessage text-center'>*Passwords did not match, please try again.</p>";
     
                                 } else if ($_GET["error"] == "usernametaken") {
-                                    echo "<p class='errorMessage text-center'>*This username is already taken please choose diffrent one.</p>";
+                                    echo "<p class='errorMessage text-center'>*This username is already taken.</p>";
     
-                                } else if ($_GET["error"] == "none") {
-                                    echo "<p class='successMessage text-center'>*You have successfully signed up!</p>";
                                 }
                             }
                         ?>
-                        
+
                     </div>
                 </div>
                 <div class="col">

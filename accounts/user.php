@@ -4,7 +4,46 @@ $signup = true;
 require "../templates/header.php";
 ?>
 
-<div class="container text-center position-absolute top-50 start-50 translate-middle">
+    <section>
+        <div class="container text-center center-profile">
+            <div class="row profile-insides rounded-4">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <ul class="row align-items-center list-user" style="height: 350px;">
+                        <li >
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </li>
+                    </ul>   
+                </div>
+                <div class="col picture-down">
+                    <div class="card" style="width: 18rem;">
+                            <img src="../img/white image.png" class="card-img-top" alt="...">
+                    </div class="pee">
+                        <a href="signup.php">
+                            <button class="btn btn-primary testes">upload</button>
+                        </a> 
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- <div class="container text-center position-absolute top-50 start-50 translate-middle">
   <div class="row">
     <div class="col-2">
     </div>
@@ -33,7 +72,7 @@ require "../templates/header.php";
     <div class="col-2">
     </div>
   </div>
-</div>
+</div> -->
 
 <?php 
 require_once "../templates/header.php";

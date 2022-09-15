@@ -51,17 +51,13 @@ p span {
 }
 
 .profile-insides {
-    height: 500px;
+    height: 400px;
     background-color: #414141;
 
 }
 
 .center-profile {
     padding-top: 100px;
-}
-
-.size {
-    width: auto;
 }
 
 .list-user {
@@ -102,4 +98,8 @@ p span {
 .btn-primary:hover {
     background-color: #6e558d !important;
     border: none !important;
+}
+
+.picture-down {
+    padding-top: 30px;
 }

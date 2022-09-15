@@ -19,8 +19,8 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li class="nav-item">
                         <?php 
-                            if ($index === true) {
-                                echo "<a href='../index.php' class='nav-link text-white custom-nav active'>Home</a>";
+                            if ($signup === true) {
+                                echo "<a href='../index.php' class='nav-link text-white custom-nav'>Home</a>";
                             } else {
                                 echo "<a href='index.php' class='nav-link text-white custom-nav active'>Home</a>";
                             }
@@ -35,13 +35,13 @@
                         
 
                         if ($signup === true && isset($_SESSION["useruid"])) {
-                            echo "<a href='user.php' class='nav-link text-white custom-nav '>Account</a>";
+                            echo "<a href='user.php' class='nav-link text-white active custom-nav '>Account</a>";
                         } else if ($signup === true) {
-                            echo "<a href='login.php' class='nav-link text-white custom-nav '>Login/Register</a>";
+                            echo "<a href='login.php' class='nav-link text-white custom-nav active'>Login/Register</a>";
                         } else if (isset($_SESSION["useruid"])) {
-                            echo "<a href='./accounts/user.php' class='nav-link text-white custom-nav '>Account</a>";
+                            echo "<a href='./accounts/user.php' class='nav-link text-white custom-nav'>Account</a>";
                         } else {
-                            echo "<a href='./accounts/login.php' class='nav-link text-white custom-nav '>Login/Register</a>";
+                            echo "<a href='./accounts/login.php' class='nav-link text-white custom-nav active'>Login/Register</a>";
                         }
                     ?>
                 </div>
