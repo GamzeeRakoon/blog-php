@@ -1,5 +1,5 @@
 <?php
-$index = true;
+$home = false;
 $signup = true;
 require "../templates/header.php";
 ?>

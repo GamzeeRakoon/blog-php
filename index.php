@@ -1,4 +1,6 @@
 <?php
+$home = true;
+$index = true;
 $signup = false;
 require "./templates/header.php";
 ?>
