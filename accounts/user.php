@@ -14,14 +14,19 @@ require "../templates/header.php";
                         <li >
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control" placeholder="<?php echo $_SESSION["useruid"];?>"aria-describedby="inputGroup-sizing-default" readonly>
                             </div>
                         </li>
                         <li>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control" placeholder="<?php echo $_SESSION["useremail"];?>"aria-describedby="inputGroup-sizing-default" readonly>
                             </div>
+                        </li>
+                        <li>
+                        <a href="../include/logout.inc.php">
+                            <button class="btn btn-primary testes">Logout</button>
+                        </a> 
                         </li>
                     </ul>   
                 </div>
@@ -29,7 +34,7 @@ require "../templates/header.php";
                     <div class="card" style="width: 18rem;">
                             <img src="../img/white image.png" class="card-img-top" alt="...">
                     </div class="pee">
-                        <a href="signup.php">
+                        <a >
                             <button class="btn btn-primary testes">upload</button>
                         </a> 
                 </div>
