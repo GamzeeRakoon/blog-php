@@ -5,7 +5,25 @@ $signup = false;
 require "./templates/header.php";
 ?>
 
-<h1>Index pagina</h1>
+<section>
+    <main>
+    <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col signup-2">
+                    <div class="signup rounded-4">
+                        <?php 
+                            
+                        ?>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
 
 <?php
 require "./templates/footer.php";
