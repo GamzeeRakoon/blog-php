@@ -1,5 +1,7 @@
 <?php 
 
+include "../templates/Parsedown.php";
+
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
     $result = null;
     
@@ -117,4 +119,20 @@ function loginUser($conn, $username, $pwd) {
         header("location: ../index.php");
         exit();
     }
+}
+
+function createPost($title, $post, $conn, $stmt) {
+        $date = date("Y/m/d");
+        $sql = "INSERT INTO `posts` (postTitle, postText, postDate) VALUES (?, ?, ?)";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../design/accounts/signup.php?error=stmtfailed");
+            exit();  
+        } 
+    
+        mysqli_stmt_bind_param($stmt, "sss", $title, $post, $date);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header("location: ../posts/creation.php?error=none");
+        exit(); 
 }

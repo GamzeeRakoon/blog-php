@@ -103,3 +103,7 @@ p span {
 .picture-down {
     padding-top: 30px;
 }
+
+.post-area {
+    resize: none;
+}
