@@ -3,6 +3,8 @@ $home = true;
 $index = true;
 $signup = false;
 require "./templates/header.php";
+require "./include/dbh.inc.php";
+require "./include/functions.inc.php";
 ?>
 
 <section>
@@ -11,12 +13,10 @@ require "./templates/header.php";
             <div class="row">
                 <div class="col">
                 </div>
-                <div class="col signup-2">
-                    <div class="signup rounded-4">
-                        <?php 
-                            
-                        ?>
-                    </div>
+                <div class="col-7 signup-2">
+                    <?php
+                        require "./templates/templatePost.php";
+                    ?>
                 </div>
                 <div class="col">
                 </div>

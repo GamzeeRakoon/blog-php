@@ -121,18 +121,41 @@ function loginUser($conn, $username, $pwd) {
     }
 }
 
-function createPost($title, $post, $conn, $stmt) {
+function createPost($title, $post, $summary, $conn, $stmt) {
         $date = date("Y/m/d");
-        $sql = "INSERT INTO `posts` (postTitle, postText, postDate) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO `posts` (postTitle, postText, postSummary, postDate) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: ../design/accounts/signup.php?error=stmtfailed");
             exit();  
         } 
     
-        mysqli_stmt_bind_param($stmt, "sss", $title, $post, $date);
+        mysqli_stmt_bind_param($stmt, "ssss", $title, $post, $summary, $date);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         header("location: ../posts/creation.php?error=none");
         exit(); 
+}
+
+function posted($title, $summary, $date, $id) {
+    echo 
+    "
+        <a class='post-block' href='index.php?post=$id'>
+            <div class='text-start blog-post rounded-4 text-white'>
+                <h1 class='post-title'>$title</h1>
+                <p>$date</p>
+                <p class='fs-4'>$summary</p>
+            </div>
+        </a>
+    ";
+}
+
+function blog($title, $text) {
+        echo
+        "
+            <div>
+                <h1  class='p text-white'>$title</h1>
+                <p>$text</p>
+            </div>
+        ";
 }

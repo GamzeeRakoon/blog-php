@@ -107,3 +107,31 @@ p span {
 .post-area {
     resize: none;
 }
+
+.blog-post {
+    background-color: #414141;
+    height: 300px;
+    margin-bottom: 50px;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.post-title {
+    color: #751fc5;
+    margin-bottom: 20px;
+}
+
+.post-title:hover {
+    color: #602896 !important;
+    text-decoration: underline;
+}
+
+.post-block {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.blog-post:hover {
+    background-color: #333333 !important;
+}
