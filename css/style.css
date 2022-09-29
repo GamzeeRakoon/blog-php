@@ -135,3 +135,14 @@ p span {
 .blog-post:hover {
     background-color: #333333 !important;
 }
+
+.blog-title {
+    color: #651caa;
+    text-decoration: underline #370b5f;
+    margin-bottom: 50px;
+}
+
+.blog-text {
+    width: 100%;
+    word-wrap: break-word;
+}

@@ -1,4 +1,7 @@
 <?php
+
+include "../templates/Parsedown.php";
+
 //echo $_GET["post"];
 $query = "SELECT * FROM `posts`;";
 

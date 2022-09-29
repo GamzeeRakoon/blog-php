@@ -154,8 +154,8 @@ function blog($title, $text) {
         echo
         "
             <div>
-                <h1  class='p text-white'>$title</h1>
-                <p>$text</p>
+                <h1  class='p blog-title'>$title</h1>
+                <p class='text-white text-start blog-text'>$text</p>
             </div>
         ";
 }

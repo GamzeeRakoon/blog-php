@@ -5,6 +5,8 @@ $signup = false;
 require "./templates/header.php";
 require "./include/dbh.inc.php";
 require "./include/functions.inc.php";
+include "../templates/Parsedown.php";
+
 ?>
 
 <section>
