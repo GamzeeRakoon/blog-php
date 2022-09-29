@@ -121,7 +121,7 @@ function loginUser($conn, $username, $pwd) {
     }
 }
 
-function createPost($title, $post, $summary, $conn, $stmt) {
+function createPost($title, $post, $summary, $conn) {
         $date = date("Y/m/d");
         $sql = "INSERT INTO `posts` (postTitle, postText, postSummary, postDate) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
