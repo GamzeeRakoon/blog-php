@@ -2,10 +2,11 @@
 $home = true;
 $index = true;
 $signup = false;
+include "../templates/Parsedown.php";
 require "./templates/header.php";
 require "./include/dbh.inc.php";
 require "./include/functions.inc.php";
-include "../templates/Parsedown.php";
+
 
 ?>
 

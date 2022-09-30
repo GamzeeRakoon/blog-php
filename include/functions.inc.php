@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-include "../templates/Parsedown.php";
+$Parsedown = new Parsedown();
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
     $result = null;
@@ -150,12 +150,14 @@ function posted($title, $summary, $date, $id) {
     ";
 }
 
-function blog($title, $text) {
-        echo
-        "
-            <div>
+function blog($title, $text1) {
+      $test = $Parsedown->text('Hello _Parsedown_!');
+      echo $test;
+    echo "test";
+       echo
+        "    <div>
                 <h1  class='p blog-title'>$title</h1>
-                <p class='text-white text-start blog-text'>$text</p>
+                <p class='text-white text-start blog-text'>".nl2br($text1)."</p>
             </div>
         ";
 }

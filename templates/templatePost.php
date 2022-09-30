@@ -1,7 +1,6 @@
 <?php
 
 include "../templates/Parsedown.php";
-
 //echo $_GET["post"];
 $query = "SELECT * FROM `posts`;";
 
@@ -11,8 +10,8 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) 
 {
     // OUTPUT DATA OF EACH ROW
-    $exit = 0;
-    while($row = $result->fetch_assoc() and $exit == 0)
+    $exit = false;
+    while($row = $result->fetch_assoc() and $exit == false)
     {
         $id = $row["postId"];
         $title = $row["postTitle"];
@@ -25,7 +24,7 @@ if ($result->num_rows > 0)
             $posting = $_GET["post"];
             if ($posting == $id) {
                 blog($title, $text);
-                $exit = 1;
+                $exit = true;
             }
         } else {
             posted($title, $summary, $date, $id);
