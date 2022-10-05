@@ -146,3 +146,34 @@ p span {
     width: 100%;
     word-wrap: break-word;
 }
+
+.user{
+    font-weight: bold;
+    color: white;
+}
+
+.time {
+    color: gray;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.userComment {
+    color: white;
+}
+
+.userComments {
+    margin-top: 20px;
+}
+
+.replies {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.input-text {
+    margin-bottom: 10px;
+}
+

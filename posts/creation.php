@@ -3,6 +3,12 @@ $posts = true;
 $index = true;
 require "../templates/header.php";
 include '../templates/Parsedown.php';
+
+if ($_SESSION["userid"] !== 1) {
+    header("location: ../index.php");
+    exit();
+}
+
 ?>
 
 

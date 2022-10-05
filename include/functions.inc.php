@@ -159,30 +159,59 @@ function blog($title, $text1) {
         ";
 }
 
-function createComment($conn, $comment) {
+function fetchCommentAmount($conn) {
+    $sql = $conn->query("SELECT commentId FROM comments");
+    $numComments = $sql->num_rows;
+    return $numComments;
+}
+
+function createComment($conn, $comment, $currentUser, $postId) {
     $date = date("Y/m/d");
-    $sql = "INSERT INTO `comments` (userId, comment, createdOn) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO `comments` (commentUser, commentDate, commentText, postId) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../index.php?error=fail");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sss", $_SESSION["userid"], $comment, $date);
+    mysqli_stmt_bind_param($stmt, "ssss", $currentUser, $date, $comment, $postId);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../index.php");
     exit();
 }
 
-function fetchCommentAmount($conn) {
-    $sql = $conn->query("SELECT id FROM comments");
-    $numComments = $sql->num_rows;
-    echo $numComments;
+function loadComments($user, $date, $comment) {
+    echo
+    "
+            <div class='comments'>
+                <div class='user'>$user <span class='time'>$date</span></div>
+                <div class='userComment'>$comment</div>
+            </div>
+    
+    ";
 }
 
-function fetchAllComments() {
-    $sql = $conn->query("SELECT name, comment, comments.createdON FROM comments INNER JOIN users ON comments.userID = users.id");
-    s
+function drawComments($numComments, $postedId) {
+
+    echo
+    "
+                            <div class='text-start'>
+                                <div>
+                                    <form action='./include/comment.inc.php' method='post'>
+                                        <textarea name='comment' class='form-control input-text' placeholder='comment' rows='4' cols='10'></textarea>
+                                        <input type='hidden' name='post' value='$postedId'>
+                                        <button class='btn-primary btn' name='submit' type='submit'>add Comment</button>
+                                    </form>
+                                </div>
+                                <div class='userComments'>
+                                    <h1 class='text-white'><b>$numComments Comments</b></h1>
+    ";
 }
+
+//function fetchAllComments()
+//{
+//    $sql = $conn->query("SELECT name, comment, comments.createdON FROM comments INNER JOIN users ON comments.userID = users.id");
+//    s
+//}
 
