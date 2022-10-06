@@ -2,11 +2,11 @@
 $postedId = $_GET["post"];
 
 
-$numComments = fetchCommentAmount($conn);
+$numComments = fetchCommentAmount($conn, $postedId);
 
 drawComments($numComments, $postedId);
 
-$query = "SELECT * FROM `comments`;";
+$query = "SELECT * FROM comments WHERE postId = $postedId";
 
 $result = $conn->query($query);
 
@@ -22,8 +22,7 @@ if ($result->num_rows > 0)
         $comment = $row["commentText"];
 
             loadComments($user, $date, $comment);
-        }
+    }
 } else {
-    header("location: ../index.php");
-    exit();
+    return $exit = true;
 }

@@ -140,13 +140,15 @@ function createPost($title, $post, $summary, $conn) {
 function posted($title, $summary, $date, $id) {
     echo 
     "
-        <a class='post-block' href='index.php?post=$id'>
-            <div class='text-start blog-post rounded-4 text-white'>
-                <h1 class='post-title'>$title</h1>
-                <p>$date</p>
-                <p class='fs-4'>$summary</p>
-            </div>
-        </a>
+        <div>
+            <a class='post-block' href='index.php?post=$id'>
+                <div class='text-start blog-post rounded-4 text-white'>
+                    <h1 class='post-title'>$title</h1>
+                    <p>$date</p>
+                    <p class='fs-4'>$summary</p>
+                </div>
+            </a>    
+        </div>
     ";
 }
 
@@ -159,8 +161,8 @@ function blog($title, $text1) {
         ";
 }
 
-function fetchCommentAmount($conn) {
-    $sql = $conn->query("SELECT commentId FROM comments");
+function fetchCommentAmount($conn, $postedId) {
+    $sql = $conn->query("SELECT commentId FROM comments WHERE postId = $postedId");
     $numComments = $sql->num_rows;
     return $numComments;
 }
@@ -177,7 +179,7 @@ function createComment($conn, $comment, $currentUser, $postId) {
     mysqli_stmt_bind_param($stmt, "ssss", $currentUser, $date, $comment, $postId);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../index.php");
+    header("location: ../index.php?post=$postId");
     exit();
 }
 
@@ -196,7 +198,7 @@ function drawComments($numComments, $postedId) {
 
     echo
     "
-                            <div class='text-start'>
+                            <div class='text-start margin-replies'>
                                 <div>
                                     <form action='./include/comment.inc.php' method='post'>
                                         <textarea name='comment' class='form-control input-text' placeholder='comment' rows='4' cols='10'></textarea>
@@ -204,8 +206,9 @@ function drawComments($numComments, $postedId) {
                                         <button class='btn-primary btn' name='submit' type='submit'>add Comment</button>
                                     </form>
                                 </div>
-                                <div class='userComments'>
+                                <div class='userComments text-start'>
                                     <h1 class='text-white'><b>$numComments Comments</b></h1>
+                                
     ";
 }
 
